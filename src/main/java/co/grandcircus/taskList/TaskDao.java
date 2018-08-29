@@ -25,6 +25,11 @@ public class TaskDao {
 		return em.find(Task.class, id);
 	}
 	
+	public List<Task> findByUser(User user) {
+		return em.createQuery("FROM Task WHERE user = :user", Task.class)
+				.setParameter("user", user)
+				.getResultList();
+	}
 	
 	public void create(Task task) {
 		em.persist(task);

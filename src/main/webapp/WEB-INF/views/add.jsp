@@ -12,27 +12,15 @@
 <title>Add Task</title>
 </head>
 
- <button class="btn btn-warning"><a href="/">Back to Home Page</a></button>
+ <button class="btn btn-warning"><a href="/showTasks">Back to Task List</a></button>
 <body>
  <div class="container">
  <!---heading---->
      <header class="heading"> Add Task</header><hr></hr>
 	<!---Form starting----> 
-	<form action="/addTask" method="post">
+	<form action="/add" method="post">
 	<div class="row ">
 	
-	 <!--- For User---->
-         <div class="col-sm-12">
-             <div class="row">
-			     <div class="col-xs-4">
-          	         <label class="firstname">User :</label> </div>
-		         <div class="col-xs-8">
-		             <input type="text" name= "user" id="fname" placeholder="User" class="form-control " >
-             </div>
-		      </div>
-		 </div>
-		 
-		 
          <div class="col-sm-12">
 		     <div class="row">
 			     <div class="col-xs-4">
@@ -52,11 +40,27 @@
 		         </div>
 		     </div>
 		 </div>
+		 
+		 <!--- For Status---->
+         <div class="col-sm-12">
+             <div class="row">
+			     <div class="col-xs-4">
+          	         <label class="firstname">Completion Status :</label> </div>
+		         <div class="col-xs-4">
+		             <label><input type="radio" name= "complete" id="gender" placeholder="Status" class="form-check " value="true" required>Complete</label>
+             	</div>
+             	<div class="col-xs-4">
+              		<label><input type="radio" name= "complete" id="gender" placeholder="Status" class="form-check " value="false" required>Not Complete</label>
+		      	</div>
+		      </div>
+		 </div>
 	 
 		     <div class="col-sm-12">
 		         <button type="submit" class="btn btn-warning">Add task</button>
 		   </div>
 		 </div>
+		 
+		  
 		 		 
 		</form> 
 </div>

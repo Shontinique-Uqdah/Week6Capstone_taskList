@@ -1,9 +1,12 @@
 package co.grandcircus.taskList;
 
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -15,7 +18,13 @@ public class User {
 	
 	String email;
 	String password;
+
+//	private Long githubId;
+
+//	private String name;
 	
+	@OneToMany(mappedBy="user")
+	private Set<Task> tasks;	
 	
 	public User(String email, String password) {
 		this.email = email;
@@ -49,6 +58,24 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+//	public void setGithubId(Long id2) {
+//		this.githubId = id2;
+//		
+//	}
+//
+//	public void setName(String name) {
+//		this.name = name;
+//		
+//	}
+//
+//	public Long getGithubId() {
+//		return githubId;
+//	}
+//
+//	public String getName() {
+//		return name;
+//	}
 	
 	
 	
